@@ -1,0 +1,1162 @@
+  [1m[35m (431.3ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (197.1ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (55.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (28.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5723633236919992485)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200911203538)
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200911203538"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBreweries (20200911203632)
+  [1m[35m (10.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (30.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200911203632"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLogs (20200911204023)
+  [1m[35m (6.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (34.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200911204023"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (9.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 20:41:05.112197"], ["updated_at", "2020-09-11 20:41:05.112197"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5723633236919992485)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (3.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "3902"], ["created_at", "2020-09-11 21:31:29.951832"], ["updated_at", "2020-09-11 21:31:29.951832"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "7573"], ["created_at", "2020-09-11 21:31:29.962349"], ["updated_at", "2020-09-11 21:31:29.962349"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4435"], ["created_at", "2020-09-11 21:31:29.991575"], ["updated_at", "2020-09-11 21:31:29.991575"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "9399"], ["created_at", "2020-09-11 21:31:29.999819"], ["updated_at", "2020-09-11 21:31:29.999819"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4192"], ["created_at", "2020-09-11 21:31:30.007662"], ["updated_at", "2020-09-11 21:31:30.007662"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.7ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "9109"], ["created_at", "2020-09-11 21:31:30.013879"], ["updated_at", "2020-09-11 21:31:30.013879"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1166"], ["created_at", "2020-09-11 21:31:30.020669"], ["updated_at", "2020-09-11 21:31:30.020669"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (1.3ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "9782"], ["created_at", "2020-09-11 21:31:30.026487"], ["updated_at", "2020-09-11 21:31:30.026487"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "5646"], ["created_at", "2020-09-11 21:31:30.033766"], ["updated_at", "2020-09-11 21:31:30.033766"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.7ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "7292"], ["created_at", "2020-09-11 21:31:30.040675"], ["updated_at", "2020-09-11 21:31:30.040675"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "elouise.becker"], ["email", "aundrea.weimann@example.net"], ["password", "JlOeXr3RnAhVlIh5Mr0"], ["created_at", "2020-09-11 21:31:32.832253"], ["updated_at", "2020-09-11 21:31:32.832253"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "adrian.nicolas"], ["email", "errol@example.org"], ["password", "NwToOoKuSkHp3"], ["created_at", "2020-09-11 21:31:32.851888"], ["updated_at", "2020-09-11 21:31:32.851888"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "madelene.greenholt"], ["email", "delila@example.net"], ["password", "Dv2YzLhSjO8dIqR3oU"], ["created_at", "2020-09-11 21:31:32.862742"], ["updated_at", "2020-09-11 21:31:32.862742"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jimmie"], ["email", "augustus@example.net"], ["password", "98NdN0aLxCePyR4nBfS"], ["created_at", "2020-09-11 21:31:32.869866"], ["updated_at", "2020-09-11 21:31:32.869866"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "margrett"], ["email", "annie@example.com"], ["password", "YnD5f4UgNwFg"], ["created_at", "2020-09-11 21:31:32.876583"], ["updated_at", "2020-09-11 21:31:32.876583"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "kathaleen_brekke"], ["email", "damon.cummings@example.org"], ["password", "Sc5N3fYu6Hv73W"], ["created_at", "2020-09-11 21:31:32.882792"], ["updated_at", "2020-09-11 21:31:32.882792"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jewel"], ["email", "darrick_greenholt@example.org"], ["password", "R0fV9pDoL"], ["created_at", "2020-09-11 21:31:32.889574"], ["updated_at", "2020-09-11 21:31:32.889574"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "lennie_price"], ["email", "ela@example.com"], ["password", "N7p1Mm2Nl8Rp374"], ["created_at", "2020-09-11 21:31:32.897308"], ["updated_at", "2020-09-11 21:31:32.897308"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "tien"], ["email", "paulina@example.net"], ["password", "QnFy1FxZ7jU9"], ["created_at", "2020-09-11 21:31:32.908781"], ["updated_at", "2020-09-11 21:31:32.908781"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "douglass_kerluke"], ["email", "tony@example.com"], ["password", "HxR770zZj7Gg"], ["created_at", "2020-09-11 21:31:32.918026"], ["updated_at", "2020-09-11 21:31:32.918026"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (16.2ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 5], ["brewery_id", 2], ["favorite", false], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:31:32.994208"], ["updated_at", "2020-09-11 21:31:32.994208"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 10], ["brewery_id", 9], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:31:33.021175"], ["updated_at", "2020-09-11 21:31:33.021175"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.8ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 9], ["brewery_id", 4], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:31:33.033069"], ["updated_at", "2020-09-11 21:31:33.033069"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 9], ["brewery_id", 5], ["favorite", false], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:31:33.043234"], ["updated_at", "2020-09-11 21:31:33.043234"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLog Create (1.1ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["brewery_id", 9], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:31:33.062109"], ["updated_at", "2020-09-11 21:31:33.062109"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["brewery_id", 5], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:31:33.073298"], ["updated_at", "2020-09-11 21:31:33.073298"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["brewery_id", 3], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:31:33.083687"], ["updated_at", "2020-09-11 21:31:33.083687"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 5], ["brewery_id", 6], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.093999"], ["updated_at", "2020-09-11 21:31:33.093999"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["brewery_id", 10], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.111803"], ["updated_at", "2020-09-11 21:31:33.111803"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["brewery_id", 6], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:31:33.122668"], ["updated_at", "2020-09-11 21:31:33.122668"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["brewery_id", 8], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.132677"], ["updated_at", "2020-09-11 21:31:33.132677"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["brewery_id", 6], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:31:33.142583"], ["updated_at", "2020-09-11 21:31:33.142583"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 5], ["brewery_id", 3], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.157308"], ["updated_at", "2020-09-11 21:31:33.157308"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 5], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.170292"], ["updated_at", "2020-09-11 21:31:33.170292"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 5], ["favorite", false], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:31:33.180178"], ["updated_at", "2020-09-11 21:31:33.180178"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 10], ["brewery_id", 7], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:31:33.190661"], ["updated_at", "2020-09-11 21:31:33.190661"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (1.2ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["brewery_id", 3], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.206192"], ["updated_at", "2020-09-11 21:31:33.206192"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 4], ["favorite", false], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:31:33.219440"], ["updated_at", "2020-09-11 21:31:33.219440"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["brewery_id", 4], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.228975"], ["updated_at", "2020-09-11 21:31:33.228975"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 5], ["brewery_id", 3], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:31:33.240011"], ["updated_at", "2020-09-11 21:31:33.240011"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBrewery Destroy (10.5ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mLog Destroy (3.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mBrewery Destroy (9.1ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[36mUser Destroy (11.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (7.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1618"], ["created_at", "2020-09-11 21:39:00.178592"], ["updated_at", "2020-09-11 21:39:00.178592"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4969"], ["created_at", "2020-09-11 21:39:00.203382"], ["updated_at", "2020-09-11 21:39:00.203382"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "9331"], ["created_at", "2020-09-11 21:39:00.230593"], ["updated_at", "2020-09-11 21:39:00.230593"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "2928"], ["created_at", "2020-09-11 21:39:00.236508"], ["updated_at", "2020-09-11 21:39:00.236508"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1985"], ["created_at", "2020-09-11 21:39:00.242251"], ["updated_at", "2020-09-11 21:39:00.242251"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "8624"], ["created_at", "2020-09-11 21:39:00.249332"], ["updated_at", "2020-09-11 21:39:00.249332"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1131"], ["created_at", "2020-09-11 21:39:00.254885"], ["updated_at", "2020-09-11 21:39:00.254885"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4081"], ["created_at", "2020-09-11 21:39:00.260321"], ["updated_at", "2020-09-11 21:39:00.260321"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "3470"], ["created_at", "2020-09-11 21:39:00.265714"], ["updated_at", "2020-09-11 21:39:00.265714"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "8981"], ["created_at", "2020-09-11 21:39:00.271101"], ["updated_at", "2020-09-11 21:39:00.271101"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "vanna.schmidt"], ["email", "exie@example.org"], ["password", "1Wl5Kx43UhPlDuJ53pY"], ["created_at", "2020-09-11 21:39:00.841547"], ["updated_at", "2020-09-11 21:39:00.841547"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "emil_macejkovic"], ["email", "tanner@example.net"], ["password", "3Uh5WpJ5pC"], ["created_at", "2020-09-11 21:39:00.857302"], ["updated_at", "2020-09-11 21:39:00.857302"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "elbert.runolfsdottir"], ["email", "jerald@example.com"], ["password", "Wm94XcJm"], ["created_at", "2020-09-11 21:39:00.863599"], ["updated_at", "2020-09-11 21:39:00.863599"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "lue"], ["email", "guadalupe@example.com"], ["password", "4FeLfQ1r0A1eCwUoQoV"], ["created_at", "2020-09-11 21:39:00.870308"], ["updated_at", "2020-09-11 21:39:00.870308"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "bronwyn.medhurst"], ["email", "larry@example.org"], ["password", "1ZoUeNgJz7"], ["created_at", "2020-09-11 21:39:00.876473"], ["updated_at", "2020-09-11 21:39:00.876473"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "laraine.witting"], ["email", "elyse.shields@example.com"], ["password", "Q8i0PvXeVl"], ["created_at", "2020-09-11 21:39:00.883081"], ["updated_at", "2020-09-11 21:39:00.883081"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "eleonora_padberg"], ["email", "manual@example.com"], ["password", "ZoNhKx1ZpJl4Fm7E1e"], ["created_at", "2020-09-11 21:39:00.888942"], ["updated_at", "2020-09-11 21:39:00.888942"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ludie_batz"], ["email", "twyla@example.net"], ["password", "VhVuGuW14pZy"], ["created_at", "2020-09-11 21:39:00.894858"], ["updated_at", "2020-09-11 21:39:00.894858"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "kasandra"], ["email", "viki_lang@example.org"], ["password", "KhL2bSoCzP5iEn"], ["created_at", "2020-09-11 21:39:00.901994"], ["updated_at", "2020-09-11 21:39:00.901994"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "cassi"], ["email", "trula_harvey@example.com"], ["password", "VwB6kLg5P7k6NcV"], ["created_at", "2020-09-11 21:39:00.908143"], ["updated_at", "2020-09-11 21:39:00.908143"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2020-09-11 16:45:22 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 27.4ms | Allocations: 478)
+Completed 200 OK in 55ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 2619)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-09-11 16:45:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/breweries" for ::1 at 2020-09-11 16:47:21 -0500
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (1.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 13.8ms | ActiveRecord: 13.6ms | Allocations: 6590)
+
+
+Started GET "/users" for ::1 at 2020-09-11 16:48:28 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 14.8ms | ActiveRecord: 10.0ms | Allocations: 7348)
+
+
+Started GET "/" for ::1 at 2020-09-11 16:48:37 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.3ms | Allocations: 191)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 730)
+
+
+Started GET "/logs" for ::1 at 2020-09-11 16:48:42 -0500
+Processing by LogsController#index as HTML
+  [1m[36mLog Load (0.9ms)[0m  [1m[34mSELECT "logs".* FROM "logs"[0m
+  ↳ app/controllers/logs_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 22.9ms | ActiveRecord: 3.4ms | Allocations: 2249)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (7989.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8323.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_development"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (115.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_development"[0m
+  [1m[35m (91.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_test"[0m
+  [1m[35m (389.1ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (124.8ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:51:02.903435"], ["updated_at", "2020-09-11 21:51:02.903435"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:51:02.914095"], ["updated_at", "2020-09-11 21:51:02.914095"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:51:03.093585"], ["updated_at", "2020-09-11 21:51:03.093585"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-09-11 21:51:03.102938"], ["key", "environment"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:51:03.112119"], ["updated_at", "2020-09-11 21:51:03.112119"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mLog Destroy (0.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mBrewery Destroy (0.7ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (3.2ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4230"], ["created_at", "2020-09-11 21:51:03.232852"], ["updated_at", "2020-09-11 21:51:03.232852"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (4.2ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4215"], ["created_at", "2020-09-11 21:51:03.255305"], ["updated_at", "2020-09-11 21:51:03.255305"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.7ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "3353"], ["created_at", "2020-09-11 21:51:03.272866"], ["updated_at", "2020-09-11 21:51:03.272866"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (2.0ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "7214"], ["created_at", "2020-09-11 21:51:03.280660"], ["updated_at", "2020-09-11 21:51:03.280660"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (1.2ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "5006"], ["created_at", "2020-09-11 21:51:03.307864"], ["updated_at", "2020-09-11 21:51:03.307864"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "3168"], ["created_at", "2020-09-11 21:51:03.319207"], ["updated_at", "2020-09-11 21:51:03.319207"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "7208"], ["created_at", "2020-09-11 21:51:03.325242"], ["updated_at", "2020-09-11 21:51:03.325242"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "8073"], ["created_at", "2020-09-11 21:51:03.330863"], ["updated_at", "2020-09-11 21:51:03.330863"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "9579"], ["created_at", "2020-09-11 21:51:03.337451"], ["updated_at", "2020-09-11 21:51:03.337451"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "7600"], ["created_at", "2020-09-11 21:51:03.343405"], ["updated_at", "2020-09-11 21:51:03.343405"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "sid"], ["email", "oswaldo.labadie@example.com"], ["password", "Fd0Tr0Fa5ZcS"], ["created_at", "2020-09-11 21:51:03.888597"], ["updated_at", "2020-09-11 21:51:03.888597"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "marianela_jacobs"], ["email", "toni.boyle@example.net"], ["password", "6EwVtZmHnS1n5R"], ["created_at", "2020-09-11 21:51:03.899334"], ["updated_at", "2020-09-11 21:51:03.899334"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (18.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "georgette_windler"], ["email", "allegra.stokes@example.com"], ["password", "Q2100oC5vL7aNiH"], ["created_at", "2020-09-11 21:51:03.910776"], ["updated_at", "2020-09-11 21:51:03.910776"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "yong.langworth"], ["email", "sona.lockman@example.org"], ["password", "03RfDw2OwL6uZxY"], ["created_at", "2020-09-11 21:51:03.957156"], ["updated_at", "2020-09-11 21:51:03.957156"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mickey"], ["email", "terrence.lynch@example.com"], ["password", "G6pGmPlHf"], ["created_at", "2020-09-11 21:51:03.966740"], ["updated_at", "2020-09-11 21:51:03.966740"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "fidela"], ["email", "willetta.tillman@example.net"], ["password", "2BsAv4V5p2PtTmM737l"], ["created_at", "2020-09-11 21:51:03.977414"], ["updated_at", "2020-09-11 21:51:03.977414"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "conrad"], ["email", "joelle_marks@example.com"], ["password", "DlN4wQ0s5De6DrK0iW1"], ["created_at", "2020-09-11 21:51:03.988538"], ["updated_at", "2020-09-11 21:51:03.988538"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "denae_prohaska"], ["email", "nelda.rutherford@example.com"], ["password", "VlLk49JcAiUv0BaPg2D"], ["created_at", "2020-09-11 21:51:03.998435"], ["updated_at", "2020-09-11 21:51:03.998435"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "christiana_keeling"], ["email", "murray@example.org"], ["password", "MtEcX4yUeGqWzQj"], ["created_at", "2020-09-11 21:51:04.008720"], ["updated_at", "2020-09-11 21:51:04.008720"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "yajaira_volkman"], ["email", "kendall@example.com"], ["password", "Sn0Rl3Tm0YmQvSvH"], ["created_at", "2020-09-11 21:51:04.018681"], ["updated_at", "2020-09-11 21:51:04.018681"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (1.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLog Create (2.4ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 1], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.073584"], ["updated_at", "2020-09-11 21:51:04.073584"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (1.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["brewery_id", 2], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:51:04.097519"], ["updated_at", "2020-09-11 21:51:04.097519"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (1.2ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 2], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:51:04.113915"], ["updated_at", "2020-09-11 21:51:04.113915"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (1.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (33.3ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 9], ["brewery_id", 7], ["favorite", false], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:51:04.132745"], ["updated_at", "2020-09-11 21:51:04.132745"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (2.4ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 3], ["favorite", false], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.184769"], ["updated_at", "2020-09-11 21:51:04.184769"]]
+  [1m[35m (71.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (1.1ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["brewery_id", 6], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:51:04.274195"], ["updated_at", "2020-09-11 21:51:04.274195"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["brewery_id", 1], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:51:04.290987"], ["updated_at", "2020-09-11 21:51:04.290987"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.9ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 4], ["brewery_id", 6], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.307276"], ["updated_at", "2020-09-11 21:51:04.307276"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (5.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 8], ["favorite", false], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.329842"], ["updated_at", "2020-09-11 21:51:04.329842"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.8ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.9ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 5], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:51:04.353616"], ["updated_at", "2020-09-11 21:51:04.353616"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLog Create (1.1ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 4], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.377922"], ["updated_at", "2020-09-11 21:51:04.377922"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (1.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 6], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:51:04.399933"], ["updated_at", "2020-09-11 21:51:04.399933"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (1.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["brewery_id", 6], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:51:04.417170"], ["updated_at", "2020-09-11 21:51:04.417170"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.9ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 10], ["brewery_id", 2], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:51:04.443347"], ["updated_at", "2020-09-11 21:51:04.443347"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLog Create (1.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 9], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:51:04.471541"], ["updated_at", "2020-09-11 21:51:04.471541"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (2.1ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 7], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.492849"], ["updated_at", "2020-09-11 21:51:04.492849"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (7.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (2.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 10], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:51:04.539111"], ["updated_at", "2020-09-11 21:51:04.539111"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 5], ["favorite", false], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:51:04.566318"], ["updated_at", "2020-09-11 21:51:04.566318"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (10.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (10.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["brewery_id", 8], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:51:04.611256"], ["updated_at", "2020-09-11 21:51:04.611256"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.9ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (12.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 10], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:51:04.664211"], ["updated_at", "2020-09-11 21:51:04.664211"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/logs" for ::1 at 2020-09-11 16:51:29 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LogsController#index as HTML
+  [1m[36mLog Load (8.5ms)[0m  [1m[34mSELECT "logs".* FROM "logs"[0m
+  ↳ app/controllers/logs_controller.rb:8:in `index'
+Completed 200 OK in 178ms (Views: 47.0ms | ActiveRecord: 67.2ms | Allocations: 10250)
+
+
+Started GET "/breweries" for ::1 at 2020-09-11 16:51:59 -0500
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (31.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 146ms (Views: 31.4ms | ActiveRecord: 97.2ms | Allocations: 5950)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (68.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_development"[0m
+  [1m[35m (68.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_test"[0m
+  [1m[35m (255.8ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (105.3ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:56:56.700556"], ["updated_at", "2020-09-11 21:56:56.700556"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:56:56.712456"], ["updated_at", "2020-09-11 21:56:56.712456"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (11.7ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:56:56.894304"], ["updated_at", "2020-09-11 21:56:56.894304"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-09-11 21:56:56.902917"], ["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:56:56.910001"], ["updated_at", "2020-09-11 21:56:56.910001"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (96.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_development"[0m
+  [1m[35m (102.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_test"[0m
+  [1m[35m (165.8ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (148.2ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:57:40.597229"], ["updated_at", "2020-09-11 21:57:40.597229"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:57:40.609882"], ["updated_at", "2020-09-11 21:57:40.609882"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:57:40.775726"], ["updated_at", "2020-09-11 21:57:40.775726"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-09-11 21:57:40.785686"], ["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:57:40.793487"], ["updated_at", "2020-09-11 21:57:40.793487"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mLog Destroy (1.6ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mBrewery Destroy (4.4ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[36mUser Destroy (3.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (173.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_development"[0m
+  [1m[35m (71.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brewery_mApp_api_test"[0m
+  [1m[35m (296.3ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (135.3ms)[0m  [1m[35mCREATE DATABASE "brewery_mApp_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (6.2ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:59:28.445348"], ["updated_at", "2020-09-11 21:59:28.445348"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:59:28.458984"], ["updated_at", "2020-09-11 21:59:28.458984"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries" CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs" CASCADE[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "logs" ("id" bigserial primary key, "user_id" bigint NOT NULL, "brewery_id" bigint NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_brewery_id" ON "logs"  ("brewery_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_logs_on_user_id" ON "logs"  ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mALTER TABLE "logs" ADD CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200911204023)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632);
+
+[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-11 21:59:28.628313"], ["updated_at", "2020-09-11 21:59:28.628313"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-09-11 21:59:28.639486"], ["key", "environment"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "926197fc4b409ae1fd08038c0106647f2f0829f5"], ["created_at", "2020-09-11 21:59:28.648544"], ["updated_at", "2020-09-11 21:59:28.648544"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mLog Destroy (1.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mBrewery Destroy (0.8ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (2.1ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1772"], ["created_at", "2020-09-11 21:59:28.779281"], ["updated_at", "2020-09-11 21:59:28.779281"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4201"], ["created_at", "2020-09-11 21:59:28.794465"], ["updated_at", "2020-09-11 21:59:28.794465"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.9ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "3569"], ["created_at", "2020-09-11 21:59:28.807440"], ["updated_at", "2020-09-11 21:59:28.807440"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4975"], ["created_at", "2020-09-11 21:59:28.818963"], ["updated_at", "2020-09-11 21:59:28.818963"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "2116"], ["created_at", "2020-09-11 21:59:28.836947"], ["updated_at", "2020-09-11 21:59:28.836947"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4820"], ["created_at", "2020-09-11 21:59:28.843786"], ["updated_at", "2020-09-11 21:59:28.843786"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1450"], ["created_at", "2020-09-11 21:59:28.850819"], ["updated_at", "2020-09-11 21:59:28.850819"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "4429"], ["created_at", "2020-09-11 21:59:28.857404"], ["updated_at", "2020-09-11 21:59:28.857404"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "1554"], ["created_at", "2020-09-11 21:59:28.865219"], ["updated_at", "2020-09-11 21:59:28.865219"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBrewery Create (0.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["index", "3638"], ["created_at", "2020-09-11 21:59:28.871331"], ["updated_at", "2020-09-11 21:59:28.871331"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hayden.schuppe"], ["email", "bob.quitzon@example.net"], ["password", "3Ld5L7yV4p4N8d3HzS"], ["created_at", "2020-09-11 21:59:29.329945"], ["updated_at", "2020-09-11 21:59:29.329945"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "linwood"], ["email", "lilla.walter@example.com"], ["password", "TfKfAqKoPnGmWbIqB8"], ["created_at", "2020-09-11 21:59:29.341921"], ["updated_at", "2020-09-11 21:59:29.341921"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "emerita_carter"], ["email", "maximo_denesik@example.net"], ["password", "J6oDzYwGuUsYnVtB"], ["created_at", "2020-09-11 21:59:29.349813"], ["updated_at", "2020-09-11 21:59:29.349813"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "bryanna_wiza"], ["email", "jacki@example.org"], ["password", "2Rg9HmU0rV"], ["created_at", "2020-09-11 21:59:29.356165"], ["updated_at", "2020-09-11 21:59:29.356165"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hassan"], ["email", "see_bartell@example.com"], ["password", "Y8e9RuIyWoH"], ["created_at", "2020-09-11 21:59:29.363095"], ["updated_at", "2020-09-11 21:59:29.363095"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "pamelia"], ["email", "terry.schumm@example.net"], ["password", "WxOfLoXeKxLnS0l"], ["created_at", "2020-09-11 21:59:29.368521"], ["updated_at", "2020-09-11 21:59:29.368521"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "almeta_kessler"], ["email", "rochell_dubuque@example.org"], ["password", "HqXtEz4K4uMxG"], ["created_at", "2020-09-11 21:59:29.375181"], ["updated_at", "2020-09-11 21:59:29.375181"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "maurice.mertz"], ["email", "robbie@example.net"], ["password", "Zz4TiCeA5pI"], ["created_at", "2020-09-11 21:59:29.381412"], ["updated_at", "2020-09-11 21:59:29.381412"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "shavonne"], ["email", "theron.hackett@example.com"], ["password", "KlEzRoXnUsYeFx6Ta"], ["created_at", "2020-09-11 21:59:29.388081"], ["updated_at", "2020-09-11 21:59:29.388081"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "lorriane"], ["email", "les@example.com"], ["password", "76UaB3oEi94V"], ["created_at", "2020-09-11 21:59:29.394368"], ["updated_at", "2020-09-11 21:59:29.394368"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (1.4ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 5], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:59:29.439216"], ["updated_at", "2020-09-11 21:59:29.439216"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["brewery_id", 6], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.455039"], ["updated_at", "2020-09-11 21:59:29.455039"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLog Create (0.7ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 4], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.473702"], ["updated_at", "2020-09-11 21:59:29.473702"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.7ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["brewery_id", 8], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:59:29.489298"], ["updated_at", "2020-09-11 21:59:29.489298"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 10], ["brewery_id", 1], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.501154"], ["updated_at", "2020-09-11 21:59:29.501154"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (1.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["brewery_id", 10], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:59:29.511704"], ["updated_at", "2020-09-11 21:59:29.511704"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 8], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:59:29.523062"], ["updated_at", "2020-09-11 21:59:29.523062"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 2], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:59:29.533177"], ["updated_at", "2020-09-11 21:59:29.533177"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 7], ["favorite", false], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:59:29.542919"], ["updated_at", "2020-09-11 21:59:29.542919"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 6], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.553250"], ["updated_at", "2020-09-11 21:59:29.553250"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["brewery_id", 4], ["favorite", false], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:59:29.563711"], ["updated_at", "2020-09-11 21:59:29.563711"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.7ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 10], ["brewery_id", 6], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.574141"], ["updated_at", "2020-09-11 21:59:29.574141"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 2], ["favorite", true], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.584774"], ["updated_at", "2020-09-11 21:59:29.584774"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 7], ["brewery_id", 10], ["favorite", false], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:59:29.594406"], ["updated_at", "2020-09-11 21:59:29.594406"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 2], ["favorite", true], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:59:29.604550"], ["updated_at", "2020-09-11 21:59:29.604550"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 10], ["favorite", true], ["wishlist", false], ["visited", true], ["created_at", "2020-09-11 21:59:29.617288"], ["updated_at", "2020-09-11 21:59:29.617288"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLog Create (0.7ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 8], ["brewery_id", 9], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.630347"], ["updated_at", "2020-09-11 21:59:29.630347"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["brewery_id", 5], ["favorite", false], ["wishlist", false], ["visited", false], ["created_at", "2020-09-11 21:59:29.640954"], ["updated_at", "2020-09-11 21:59:29.640954"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 5], ["brewery_id", 6], ["favorite", false], ["wishlist", true], ["visited", false], ["created_at", "2020-09-11 21:59:29.651073"], ["updated_at", "2020-09-11 21:59:29.651073"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["brewery_id", 7], ["favorite", true], ["wishlist", true], ["visited", true], ["created_at", "2020-09-11 21:59:29.661140"], ["updated_at", "2020-09-11 21:59:29.661140"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/breweries" for ::1 at 2020-09-11 17:00:10 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (1.9ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 90ms (Views: 12.4ms | ActiveRecord: 60.8ms | Allocations: 6510)
+
+
+Started GET "/logs" for ::1 at 2020-09-11 17:01:07 -0500
+Processing by LogsController#index as HTML
+  [1m[36mLog Load (35.3ms)[0m  [1m[34mSELECT "logs".* FROM "logs"[0m
+  ↳ app/controllers/logs_controller.rb:8:in `index'
+Completed 200 OK in 146ms (Views: 39.6ms | ActiveRecord: 88.5ms | Allocations: 9686)
+
+
+Started GET "/user" for ::1 at 2020-09-11 17:02:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-09-11 17:02:07 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 14.3ms | ActiveRecord: 30.3ms | Allocations: 7509)
+
+
+Started GET "/logs" for ::1 at 2020-09-11 17:02:21 -0500
+Processing by LogsController#index as HTML
+  [1m[36mLog Load (0.6ms)[0m  [1m[34mSELECT "logs".* FROM "logs"[0m
+  ↳ app/controllers/logs_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 3353)
+
+
+Started GET "/breweries" for ::1 at 2020-09-11 17:06:50 -0500
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (1.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 1.3ms | Allocations: 1850)
+
+

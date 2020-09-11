@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  brewery: one
+  favorite: false
+  wishlist: false
+  visited: false
+
+two:
+  user: two
+  brewery: two
+  favorite: false
+  wishlist: false
+  visited: false
