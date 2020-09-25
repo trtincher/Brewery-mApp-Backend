@@ -1310,3 +1310,681 @@ Processing by LogsController#index as HTML
 Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 1.2ms | Allocations: 2219)
 
 
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 12:33:45 -0500
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 12:36:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 12:37:10 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 12:39:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/5" for ::1 at 2020-09-14 12:41:26 -0500
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 171)
+
+
+Started GET "/users" for ::1 at 2020-09-14 12:41:32 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (63.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 241ms (Views: 17.4ms | ActiveRecord: 204.4ms | Allocations: 7943)
+
+
+Started GET "/users/5" for ::1 at 2020-09-14 12:41:55 -0500
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 200 OK in 89ms (Views: 1.1ms | ActiveRecord: 24.5ms | Allocations: 6523)
+
+
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:42:54 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+Completed 404 Not Found in 34ms (ActiveRecord: 27.6ms | Allocations: 1924)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:43:10 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 51ms (ActiveRecord: 6.4ms | Allocations: 2522)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=see_bartell@example):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:43:44 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+Completed 404 Not Found in 35ms (ActiveRecord: 24.8ms | Allocations: 1903)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:44:54 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+Completed 404 Not Found in 44ms (ActiveRecord: 26.3ms | Allocations: 1901)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:45:29 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 84ms (ActiveRecord: 27.9ms | Allocations: 2523)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=see_bartell@example):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:52:20 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 59ms (Views: 0.4ms | ActiveRecord: 22.9ms | Allocations: 2521)
+
+
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:52:52 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 96ms (Views: 0.4ms | ActiveRecord: 38.7ms | Allocations: 2566)
+
+
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 12:53:58 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 8.6ms | Allocations: 3417)
+
+
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 12:56:20 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (35.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 37ms (Views: 0.1ms | ActiveRecord: 35.1ms | Allocations: 683)
+
+
+Started GET "/users/%22see_bartell@example.com%22" for ::1 at 2020-09-14 12:56:42 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"\"see_bartell@example"}
+  [1m[36mUser Load (47.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "\"see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 47.8ms | Allocations: 683)
+
+
+Started GET "/users/?email=see_bartell@example.com" for ::1 at 2020-09-14 12:58:33 -0500
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "email"=>"see_bartell@example.com"}
+  [1m[36mUser Load (34.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 91ms (Views: 8.6ms | ActiveRecord: 81.9ms | Allocations: 5723)
+
+
+Started GET "/users/?email=see_bartell@example.com" for ::1 at 2020-09-14 12:59:28 -0500
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "email"=>"see_bartell@example.com"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 126ms (Views: 38.1ms | ActiveRecord: 61.0ms | Allocations: 7187)
+
+
+Started GET "/users/see_bartell@example.com" for ::1 at 2020-09-14 13:00:29 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 132ms (Views: 0.1ms | ActiveRecord: 4.9ms | Allocations: 2542)
+
+
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 13:02:15 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (28.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 28.1ms | Allocations: 668)
+
+
+Started GET "/users/jacki@example.org" for ::1 at 2020-09-14 13:03:16 -0500
+Processing by UsersController#show as 
+  Parameters: {"id"=>"jacki@example"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jacki@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 20ms (Views: 0.8ms | ActiveRecord: 4.4ms | Allocations: 647)
+
+
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 13:04:45 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 185ms (Views: 0.2ms | ActiveRecord: 73.0ms | Allocations: 2515)
+
+
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 13:05:55 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "see_bartell@example"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `set_user'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 2535)
+
+
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 13:06:38 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "see_bartell@example"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 65ms (Views: 12.9ms | ActiveRecord: 31.6ms | Allocations: 2654)
+
+
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 13:07:04 -0500
+  
+SyntaxError (/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:46: syntax error, unexpected '}', expecting =>
+...User.where(email: {params[:id]})
+...                              ^
+/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:61: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:46: syntax error, unexpected '}', expecting =>
+app/controllers/users_controller.rb:61: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:46: syntax error, unexpected '}', expecting =>
+app/controllers/users_controller.rb:61: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/see_bartell@example.com/" for ::1 at 2020-09-14 13:07:46 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"see_bartell@example"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "see_bartell@example"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 92ms (Views: 8.2ms | ActiveRecord: 57.4ms | Allocations: 2634)
+
+
+Started GET "/users/linwood" for ::1 at 2020-09-14 13:11:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"linwood"}
+  [1m[36mUser Load (28.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "linwood"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 39ms (Views: 9.3ms | ActiveRecord: 28.6ms | Allocations: 924)
+
+
+Started GET "/users/linwood" for ::1 at 2020-09-14 13:12:23 -0500
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"linwood"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1[0m  [["name", "linwood"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 114ms (Views: 26.1ms | ActiveRecord: 78.9ms | Allocations: 6371)
+
+
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 13:12:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 13:13:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/?email=lilla.walter@example.com" for ::1 at 2020-09-14 13:14:20 -0500
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "email"=>"lilla.walter@example.com"}
+  [1m[36mUser Load (28.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 165ms (Views: 84.6ms | ActiveRecord: 69.6ms | Allocations: 7179)
+
+
+Started GET "/users/?email=lilla.walter@example.com" for ::1 at 2020-09-14 13:14:39 -0500
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "email"=>"lilla.walter@example.com"}
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 86ms (Views: 12.5ms | ActiveRecord: 59.0ms | Allocations: 7147)
+
+
+Started GET "/users/email=lilla.walter@example.com" for ::1 at 2020-09-14 13:15:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/email=lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 13:15:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/lilla.walter@example.com" for ::1 at 2020-09-14 13:15:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/lilla.walter@example.com"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:15:45 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "maximo_denesik@example"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 27ms (Views: 2.8ms | ActiveRecord: 16.1ms | Allocations: 2631)
+
+
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:18:19 -0500
+  
+SyntaxError (/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:46: syntax error, unexpected ':', expecting ')'
+... @user= User.where(email LIKE : params[:id])
+...                              ^
+/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:46: syntax error, unexpected ')', expecting end
+...where(email LIKE : params[:id])
+...                              ^
+/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:61: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:46: syntax error, unexpected ':', expecting ')'
+app/controllers/users_controller.rb:46: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:61: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:46: syntax error, unexpected ':', expecting ')'
+app/controllers/users_controller.rb:46: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:61: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:18:34 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"maximo_denesik@example"}
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 0.0ms | Allocations: 38057)
+
+
+  
+NoMethodError (undefined method `email' for #<UsersController:0x00007fdc53afd610>):
+  
+app/controllers/users_controller.rb:46:in `set_user'
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:19:29 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (40.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (email LIKE : params[:id])[0m
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 40.5ms | Allocations: 2336)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT "users".* FROM "users" WHERE (email LIKE : params[:id...
+                                                        ^
+):
+  
+app/controllers/users_controller.rb:15:in `show'
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:19:51 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (email: params[:id])[0m
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 9.1ms | Allocations: 2322)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT "users".* FROM "users" WHERE (email: params[:id])
+                                                  ^
+):
+  
+app/controllers/users_controller.rb:15:in `show'
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:20:10 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "maximo_denesik@example"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 45ms (Views: 14.2ms | ActiveRecord: 4.0ms | Allocations: 2640)
+
+
+Started GET "/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:20:43 -0500
+Processing by UsersController#show as 
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}", "id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "maximo_denesik@example"]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 32ms (Views: 4.3ms | ActiveRecord: 11.6ms | Allocations: 2632)
+
+
+Started GET "/api/users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:22:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/maximo_denesik@example.net"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/users/3" for ::1 at 2020-09-14 13:25:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/3"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "//users/3" for ::1 at 2020-09-14 13:25:48 -0500
+  
+SyntaxError (/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:44: syntax error, unexpected '}', expecting =>
+...User.where(email: {params[:id]})
+...                              ^
+/Users/travistincher/Desktop/Code/BreweryApp/Brewery-mApp-Backend/brewery_mApp_api/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:44: syntax error, unexpected '}', expecting =>
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:44: syntax error, unexpected '}', expecting =>
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+Started GET "//users/3" for ::1 at 2020-09-14 13:26:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "3"]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 24ms (Views: 4.7ms | ActiveRecord: 9.5ms | Allocations: 2722)
+
+
+Started GET "//users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:27:03 -0500
+Processing by UsersController#show as 
+  Parameters: {"id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "maximo_denesik@example"]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 904)
+
+
+Started GET "//users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:27:06 -0500
+Processing by UsersController#show as 
+  Parameters: {"id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "maximo_denesik@example"]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 904)
+
+
+Started GET "//users/maximo_denesik@example.net" for ::1 at 2020-09-14 13:28:44 -0500
+Processing by UsersController#show as 
+  Parameters: {"id"=>"maximo_denesik@example"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1[0m  [["email", "maximo_denesik@example"]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.8ms | Allocations: 904)
+
+
+Started GET "/" for ::1 at 2020-09-15 08:16:48 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 45.0ms | Allocations: 201)
+Completed 200 OK in 62ms (Views: 55.5ms | ActiveRecord: 0.0ms | Allocations: 870)
+
+
+Started GET "/users" for ::1 at 2020-09-15 08:16:54 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (47.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 177ms (Views: 27.9ms | ActiveRecord: 148.1ms | Allocations: 5570)
+
+
+Started GET "/" for ::1 at 2020-09-15 08:17:00 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.2ms | Allocations: 190)
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 721)
+
+
+Started GET "/" for ::1 at 2020-09-25 15:52:27 -0500
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.8ms | Allocations: 315)
+Completed 200 OK in 65ms (Views: 36.0ms | ActiveRecord: 0.0ms | Allocations: 1594)
+
+
+Started GET "/users" for ::1 at 2020-09-25 15:52:35 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (19.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 137ms (Views: 19.4ms | ActiveRecord: 94.5ms | Allocations: 7978)
+
+
