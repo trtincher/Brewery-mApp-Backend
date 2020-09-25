@@ -1988,3 +1988,971 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 137ms (Views: 19.4ms | ActiveRecord: 94.5ms | Allocations: 7978)
 
 
+Started GET "/" for ::1 at 2020-09-25 16:32:49 -0500
+  [1m[35m (16.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200911203538)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200911203538"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBreweries (20200911203632)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "index" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200911203632"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLogs (20200911204023)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200911204023"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-25 21:33:58.761286"], ["updated_at", "2020-09-25 21:33:58.761286"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-09-25 16:34:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.8ms | Allocations: 201)
+Completed 200 OK in 24ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 3795)
+
+
+Started GET "/" for ::1 at 2020-09-25 16:35:02 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 32.4ms | Allocations: 315)
+Completed 200 OK in 78ms (Views: 43.9ms | ActiveRecord: 0.0ms | Allocations: 4215)
+
+
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserPasswordColumn (20200925214004)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","email","password","created_at","updated_at")
+                     SELECT "id","name","email","password","created_at","updated_at" FROM "users"[0m
+  [1m[35m (4.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","email","created_at","updated_at")
+                     SELECT "id","name","email","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925214004"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveUserNameColumn (20200925214153)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","email","created_at","updated_at")
+                     SELECT "id","name","email","created_at","updated_at" FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","email","created_at","updated_at")
+                     SELECT "id","email","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925214153"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserPasswordDigestColumn (20200925214356)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mprimary::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925214356"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserPasswordDigestColumn1 (20200925214723)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925214723"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries"[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "index" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs"[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+, CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200925214723)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632),
+(20200911204023),
+(20200925214004),
+(20200925214153),
+(20200925214356);
+
+[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-25 21:50:47.106698"], ["updated_at", "2020-09-25 21:50:47.106698"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ac18454ab459fa20351c7d6bc51d18c2eb9b57e7"], ["created_at", "2020-09-25 21:50:47.126206"], ["updated_at", "2020-09-25 21:50:47.126206"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "index" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+, CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200925214723)[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632),
+(20200911204023),
+(20200925214004),
+(20200925214153),
+(20200925214356);
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-25 21:50:47.294301"], ["updated_at", "2020-09-25 21:50:47.294301"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-09-25 21:50:47.304456"], ["key", "environment"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ac18454ab459fa20351c7d6bc51d18c2eb9b57e7"], ["created_at", "2020-09-25 21:50:47.313120"], ["updated_at", "2020-09-25 21:50:47.313120"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLog Destroy (0.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mBrewery Destroy (0.1ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1226"], ["created_at", "2020-09-25 21:50:47.410498"], ["updated_at", "2020-09-25 21:50:47.410498"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "3721"], ["created_at", "2020-09-25 21:50:47.432091"], ["updated_at", "2020-09-25 21:50:47.432091"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (1.0ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1559"], ["created_at", "2020-09-25 21:50:47.440401"], ["updated_at", "2020-09-25 21:50:47.440401"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "3609"], ["created_at", "2020-09-25 21:50:47.454177"], ["updated_at", "2020-09-25 21:50:47.454177"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.8ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "4788"], ["created_at", "2020-09-25 21:50:47.474179"], ["updated_at", "2020-09-25 21:50:47.474179"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.7ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "2815"], ["created_at", "2020-09-25 21:50:47.485704"], ["updated_at", "2020-09-25 21:50:47.485704"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "3478"], ["created_at", "2020-09-25 21:50:47.493069"], ["updated_at", "2020-09-25 21:50:47.493069"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "3992"], ["created_at", "2020-09-25 21:50:47.500100"], ["updated_at", "2020-09-25 21:50:47.500100"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "2702"], ["created_at", "2020-09-25 21:50:47.507221"], ["updated_at", "2020-09-25 21:50:47.507221"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1514"], ["created_at", "2020-09-25 21:50:47.526416"], ["updated_at", "2020-09-25 21:50:47.526416"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries"[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "index" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs"[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+, CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200925214723)[0m
+  [1m[35m (8.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632),
+(20200911204023),
+(20200925214004),
+(20200925214153),
+(20200925214356);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-25 21:53:16.800164"], ["updated_at", "2020-09-25 21:53:16.800164"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ac18454ab459fa20351c7d6bc51d18c2eb9b57e7"], ["created_at", "2020-09-25 21:53:16.818241"], ["updated_at", "2020-09-25 21:53:16.818241"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "breweries"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "breweries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "index" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs"[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean, "wishlist" boolean, "visited" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alogs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_user_id" ON "alogs" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_alogs_on_brewery_id" ON "alogs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alogs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "logs"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "logs" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "brewery_id" integer NOT NULL, "favorite" boolean DEFAULT NULL, "wishlist" boolean DEFAULT NULL, "visited" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b7c3823b57"
+FOREIGN KEY ("brewery_id")
+  REFERENCES "breweries" ("id")
+, CONSTRAINT "fk_rails_8fc980bf44"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_brewery_id" ON "logs" ("brewery_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_logs_on_user_id" ON "logs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at")
+                     SELECT "id","user_id","brewery_id","favorite","wishlist","visited","created_at","updated_at" FROM "alogs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200925214723)[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200911203538),
+(20200911203632),
+(20200911204023),
+(20200925214004),
+(20200925214153),
+(20200925214356);
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-25 21:53:17.000843"], ["updated_at", "2020-09-25 21:53:17.000843"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-09-25 21:53:17.009760"], ["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ac18454ab459fa20351c7d6bc51d18c2eb9b57e7"], ["created_at", "2020-09-25 21:53:17.020293"], ["updated_at", "2020-09-25 21:53:17.020293"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mBrewery Destroy (0.1ms)[0m  [1m[31mDELETE FROM "breweries"[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (1.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "4284"], ["created_at", "2020-09-25 21:53:17.113986"], ["updated_at", "2020-09-25 21:53:17.113986"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (2.8ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1422"], ["created_at", "2020-09-25 21:53:17.146958"], ["updated_at", "2020-09-25 21:53:17.146958"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.9ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1551"], ["created_at", "2020-09-25 21:53:17.169051"], ["updated_at", "2020-09-25 21:53:17.169051"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "3144"], ["created_at", "2020-09-25 21:53:17.179048"], ["updated_at", "2020-09-25 21:53:17.179048"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "4741"], ["created_at", "2020-09-25 21:53:17.191057"], ["updated_at", "2020-09-25 21:53:17.191057"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (1.4ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "3945"], ["created_at", "2020-09-25 21:53:17.198753"], ["updated_at", "2020-09-25 21:53:17.198753"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1763"], ["created_at", "2020-09-25 21:53:17.206792"], ["updated_at", "2020-09-25 21:53:17.206792"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.6ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "4326"], ["created_at", "2020-09-25 21:53:17.230857"], ["updated_at", "2020-09-25 21:53:17.230857"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1975"], ["created_at", "2020-09-25 21:53:17.239324"], ["updated_at", "2020-09-25 21:53:17.239324"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrewery Create (0.5ms)[0m  [1m[32mINSERT INTO "breweries" ("index", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["index", "1512"], ["created_at", "2020-09-25 21:53:17.246413"], ["updated_at", "2020-09-25 21:53:17.246413"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tony@example.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "tony@example.net"], ["created_at", "2020-09-25 21:53:18.129287"], ["updated_at", "2020-09-25 21:53:18.129287"], ["password_digest", "$2a$12$9RjmbkRWSm31K7go7OQaa.kBTmPiZl10PKw./jbtdmBg76pbCCB.6"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "carole_dicki@example.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "carole_dicki@example.net"], ["created_at", "2020-09-25 21:53:18.408033"], ["updated_at", "2020-09-25 21:53:18.408033"], ["password_digest", "$2a$12$g2Lt7WUEucIdH/dUrB0oZeVKXRGUrmXYtdOIERMl/4Nz8Y/N.xClC"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jarvis.cole@example.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "jarvis.cole@example.org"], ["created_at", "2020-09-25 21:53:18.687860"], ["updated_at", "2020-09-25 21:53:18.687860"], ["password_digest", "$2a$12$7XGwgegOeDnbx3pOuR2GqO9XKF3RktzfDoqrWp2LA8oGYEbU1LPuO"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ali@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "ali@example.com"], ["created_at", "2020-09-25 21:53:18.963587"], ["updated_at", "2020-09-25 21:53:18.963587"], ["password_digest", "$2a$12$6BYaFANnqTi6eNJUHX9PheYJ1lzWFFx73WoLP71SKI2JCNxDmESeu"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "selena@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "selena@example.com"], ["created_at", "2020-09-25 21:53:19.297290"], ["updated_at", "2020-09-25 21:53:19.297290"], ["password_digest", "$2a$12$K9eRBP3tN0ZDSl5HLJUm1e1kNmh29WllRSzVt8PmdKv1isVOPor06"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "clifford_schaefer@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "clifford_schaefer@example.com"], ["created_at", "2020-09-25 21:53:19.603488"], ["updated_at", "2020-09-25 21:53:19.603488"], ["password_digest", "$2a$12$QaBsrfaEOurGrIq4bUSQVe29uytcU0eN6Nb9Z7XM7Rwy8NPE9TPGS"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cathryn_marquardt@example.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "cathryn_marquardt@example.net"], ["created_at", "2020-09-25 21:53:19.890966"], ["updated_at", "2020-09-25 21:53:19.890966"], ["password_digest", "$2a$12$5xA34gq9.4PsqC.YsNuCxOikBpTLbuZCngSID0.rekcQrZ6uI8bCS"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonathon_hyatt@example.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "jonathon_hyatt@example.net"], ["created_at", "2020-09-25 21:53:20.165394"], ["updated_at", "2020-09-25 21:53:20.165394"], ["password_digest", "$2a$12$54Icb43Z3sTF5WFaY5RyUeUoK0V8a3fQbeR1R36RckpgVsdKYO6vG"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tyson@example.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "tyson@example.net"], ["created_at", "2020-09-25 21:53:20.447208"], ["updated_at", "2020-09-25 21:53:20.447208"], ["password_digest", "$2a$12$a93U4Q/XVPcNiYcqBVTrY.K07sxcHbi5pa2QkgKyA1AvjBTDo2q.G"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "amado@example.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "amado@example.org"], ["created_at", "2020-09-25 21:53:20.722035"], ["updated_at", "2020-09-25 21:53:20.722035"], ["password_digest", "$2a$12$.zMdReA9cZhPcYLsv8Gmnua8uBtSECq1G7VGE/P7UCZoL0U5zYR3."]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 10], ["brewery_id", 7], ["favorite", 1], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.773229"], ["updated_at", "2020-09-25 21:53:20.773229"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLog Create (0.8ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["brewery_id", 1], ["favorite", 1], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.784819"], ["updated_at", "2020-09-25 21:53:20.784819"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["brewery_id", 10], ["favorite", 1], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.814595"], ["updated_at", "2020-09-25 21:53:20.814595"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 10], ["brewery_id", 2], ["favorite", 0], ["wishlist", 0], ["visited", 1], ["created_at", "2020-09-25 21:53:20.825059"], ["updated_at", "2020-09-25 21:53:20.825059"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLog Create (1.4ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 6], ["brewery_id", 6], ["favorite", 0], ["wishlist", 1], ["visited", 1], ["created_at", "2020-09-25 21:53:20.838181"], ["updated_at", "2020-09-25 21:53:20.838181"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["brewery_id", 5], ["favorite", 1], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.851139"], ["updated_at", "2020-09-25 21:53:20.851139"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["brewery_id", 8], ["favorite", 0], ["wishlist", 1], ["visited", 1], ["created_at", "2020-09-25 21:53:20.864420"], ["updated_at", "2020-09-25 21:53:20.864420"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 6], ["brewery_id", 8], ["favorite", 0], ["wishlist", 0], ["visited", 1], ["created_at", "2020-09-25 21:53:20.875258"], ["updated_at", "2020-09-25 21:53:20.875258"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 5], ["brewery_id", 2], ["favorite", 1], ["wishlist", 0], ["visited", 0], ["created_at", "2020-09-25 21:53:20.887922"], ["updated_at", "2020-09-25 21:53:20.887922"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["brewery_id", 8], ["favorite", 0], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.899257"], ["updated_at", "2020-09-25 21:53:20.899257"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 8], ["brewery_id", 2], ["favorite", 0], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.909204"], ["updated_at", "2020-09-25 21:53:20.909204"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 9], ["brewery_id", 8], ["favorite", 0], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.919323"], ["updated_at", "2020-09-25 21:53:20.919323"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (0.4ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 9], ["brewery_id", 3], ["favorite", 1], ["wishlist", 0], ["visited", 0], ["created_at", "2020-09-25 21:53:20.929351"], ["updated_at", "2020-09-25 21:53:20.929351"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["brewery_id", 2], ["favorite", 0], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:20.943359"], ["updated_at", "2020-09-25 21:53:20.943359"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLog Create (2.0ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 5], ["brewery_id", 3], ["favorite", 0], ["wishlist", 0], ["visited", 1], ["created_at", "2020-09-25 21:53:20.959025"], ["updated_at", "2020-09-25 21:53:20.959025"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLog Create (0.7ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 6], ["brewery_id", 1], ["favorite", 0], ["wishlist", 0], ["visited", 0], ["created_at", "2020-09-25 21:53:20.975872"], ["updated_at", "2020-09-25 21:53:20.975872"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["brewery_id", 5], ["favorite", 0], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:21.010962"], ["updated_at", "2020-09-25 21:53:21.010962"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["brewery_id", 7], ["favorite", 0], ["wishlist", 1], ["visited", 0], ["created_at", "2020-09-25 21:53:21.020991"], ["updated_at", "2020-09-25 21:53:21.020991"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLog Create (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 6], ["brewery_id", 9], ["favorite", 0], ["wishlist", 0], ["visited", 0], ["created_at", "2020-09-25 21:53:21.030997"], ["updated_at", "2020-09-25 21:53:21.030997"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLog Create (1.1ms)[0m  [1m[32mINSERT INTO "logs" ("user_id", "brewery_id", "favorite", "wishlist", "visited", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 8], ["brewery_id", 2], ["favorite", 1], ["wishlist", 0], ["visited", 1], ["created_at", "2020-09-25 21:53:21.045790"], ["updated_at", "2020-09-25 21:53:21.045790"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for ::1 at 2020-09-25 16:53:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 11.7ms | ActiveRecord: 1.0ms | Allocations: 10513)
+
+
+Started POST "/sessions" for ::1 at 2020-09-25 16:58:06 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+NameError (uninitialized constant SessionsController::CurrentUserConcern):
+  
+app/controllers/sessions_controller.rb:2:in `<class:SessionsController>'
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/sessions" for ::1 at 2020-09-25 17:01:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "z@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 3311)
+
+
+Started GET "/users" for ::1 at 2020-09-25 17:03:49 -0500
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"'Joe the Exuberant'", "gender"=>"'Male'", "race"=>"'Dwarf'", "class"=>"\"Wizard\"", "level"=>"3", "baseStats"=>"{strength:8}", "saving_throws"=>"['good']", "hp"=>"25", "movement"=>"30", "armorClass"=>"14", "conditions"=>"{}", "defenses"=>"[]", "languages"=>"{ common: \"every speaks it yo'}", "actions"=>"['hit stuff', 'magic stuff']", "spells"=>"[{spell: 'spell name'}]", "equipment"=>"[{item:'item name'}]", "featuresTraits"=>"{'you know'}", "description"=>"{background: 'you worked on this too hard'}", "proficiencies"=>"{sav:['this one', 'that one']}"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 22.2ms | ActiveRecord: 2.4ms | Allocations: 5476)
+
+
+Started POST "/sessions" for ::1 at 2020-09-25 17:09:43 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "z@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 2759)
+
+
+Started POST "/sessions" for ::1 at 2020-09-25 17:11:01 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "z@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 752)
+
+
+Started GET "/users" for ::1 at 2020-09-25 17:13:55 -0500
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions" for ::1 at 2020-09-25 17:14:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-09-25 17:17:22 -0500
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/sessions" for ::1 at 2020-09-25 17:18:04 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"trtincher@example.net", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 882)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/" for ::1 at 2020-09-25 17:22:16 -0500
+Processing by StaticController#home as HTML
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 2718)
+
+
+Started POST "/sessions" for ::1 at 2020-09-25 17:22:56 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "z@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 746)
+
+
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "z@dev.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["email", "z@dev.com"], ["created_at", "2020-09-25 22:25:41.049196"], ["updated_at", "2020-09-25 22:25:41.049196"], ["password_digest", "$2a$12$weG0K/BEV3s9gVXGJW92IOu.pkFS7wH/wA1yzcHoYXO9jUseDua/u"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/sessions" for ::1 at 2020-09-25 17:26:12 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"z@dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "z@dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 200 OK in 307ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 3862)
+
+

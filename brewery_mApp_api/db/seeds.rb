@@ -23,7 +23,7 @@ puts 'Breweries created'
 
 10.times do
 User.create(
-    [{name: Faker::Internet.username, email: Faker::Internet.safe_email, password: Faker::Internet.password(min_length: 8, max_length: 20)}]
+    [{email: Faker::Internet.safe_email, password: 'FakePassword123!', password_confirmation:'FakePassword123!'}]
 )
 end
 puts 'Users created'
